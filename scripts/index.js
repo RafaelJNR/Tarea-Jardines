@@ -56,6 +56,14 @@ const tareas =  [
       fechaAlta: "25/11",
       fechaBaja: "N/A"
     },
+    { 
+      descripcion: "Sustitución manguera picada.",
+      parcela: "talud",
+      estado: "finalizada",
+      herramientas: ["mangueras goteo integrado, sacabocados, tijeras de mano"],
+      fechaAlta: "25/11",
+      fechaBaja: "25/11"
+    },
 ];
 
 function TodasLasTareas(){
