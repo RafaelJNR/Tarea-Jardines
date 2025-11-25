@@ -6,7 +6,8 @@ const tareas =  [
       estado: "pendiente",
       herramientas: ["mangueras goteo integrado, sacabocados, tijeras de mano"],
       fechaAlta: "25/11",
-      fechaBaja: "N/A"
+      fechaBaja: "N/A",
+      prioridad: "alta"
     },
     { 
       descripcion: "Reposición tres (3) tajinastes.",
@@ -14,7 +15,8 @@ const tareas =  [
       estado: "pendiente",
       herramientas: ["sacho", "compost", "ortiga"],
       fechaAlta: "25/11",
-      fechaBaja: "N/A"
+      fechaBaja: "N/A",
+      prioridad: "media"
     },
     { 
       descripcion: "Adornar y plantar fajina.",
@@ -22,7 +24,8 @@ const tareas =  [
       estado: "pendiente",
       herramientas: ["sacho, martillo, fucha, pala de jardinería"],
       fechaAlta: "25/11",
-      fechaBaja: "N/A"
+      fechaBaja: "N/A",
+      prioridad: "baja"
     },
     { 
       descripcion: "Instalar riego en la fajina.",
@@ -30,7 +33,8 @@ const tareas =  [
       estado: "pendiente",
       herramientas: ["mangueras goteo integrado, sacabocados, tijeras de mano"],
       fechaAlta: "25/11",
-      fechaBaja: "N/A"
+      fechaBaja: "N/A",
+      prioridad: "baja"
     },
     { 
       descripcion: "Instalar caseta y plato para los pájaros.",
@@ -38,7 +42,8 @@ const tareas =  [
       estado: "finalizada",
       herramientas: ["martillo, alcayatas, pala"],
       fechaAlta: "25/11",
-      fechaBaja: "2025-11-25"
+      fechaBaja: "25/11",
+      prioridad: "baja"
     },
     { 
       descripcion: "Limpieza de hojas y restos de escombros.",
@@ -46,7 +51,8 @@ const tareas =  [
       estado: "pendiente",
       herramientas: ["rastrillo de abanico", "sopladora"],
       fechaAlta: "25/11",
-      fechaBaja: "N/A"
+      fechaBaja: "N/A",
+      prioridad: "media"
     },
     { 
       descripcion: "Desbrozar adventicias bordillo.",
@@ -54,7 +60,8 @@ const tareas =  [
       estado: "pendiente",
       herramientas: ["fucha de mano"],
       fechaAlta: "25/11",
-      fechaBaja: "N/A"
+      fechaBaja: "N/A",
+      prioridad: "baja"
     },
     { 
       descripcion: "Sustitución manguera picada.",
@@ -62,7 +69,8 @@ const tareas =  [
       estado: "finalizada",
       herramientas: ["mangueras goteo integrado, sacabocados, tijeras de mano"],
       fechaAlta: "25/11",
-      fechaBaja: "25/11"
+      fechaBaja: "25/11",
+      prioridad: "alta"
     },
 ];
 
@@ -75,7 +83,9 @@ function TodasLasTareas(){
         // Crea el elemento principal (la tarjeta de tarea)
         var li = document.createElement("li");
         li.classList.add("task-item");
-        li.setAttribute('data-estado', element.estado); // Usado para estilos condicionales
+        li.setAttribute('data-estado', element.estado);
+        // AÑADIDO: Atributo para la prioridad (para los estilos de borde)
+        li.setAttribute('data-prioridad', element.prioridad); 
 
         // --- Encabezado de la tarjeta (siempre visible) ---
         var header = document.createElement("div");
@@ -104,7 +114,8 @@ function TodasLasTareas(){
             return div;
         };
 
-        // Añade los campos de detalle
+        // PASO CLAVE: Se incluye la prioridad en los detalles
+        details.appendChild(createDetailItem("Prioridad", element.prioridad.toUpperCase())); 
         details.appendChild(createDetailItem("Parcela", element.parcela));
         details.appendChild(createDetailItem("Estado", element.estado.toUpperCase()));
         details.appendChild(createDetailItem("Herramientas", element.herramientas.join(", ")));
@@ -119,15 +130,17 @@ function TodasLasTareas(){
     });
 }
 
+// La función EncontrarTarea() también debe ser actualizada de forma similar
+
 function EncontrarTarea(){
     const busqueda = document.getElementById("tarea-input").value.toLowerCase();
     const contenido = document.getElementById("content");
-    contenido.innerHTML = ""; // Limpiar antes de mostrar resultados
+    contenido.innerHTML = ""; 
 
-    // Filtra las tareas basadas en la descripción o parcela
     const tareasFiltradas = tareas.filter(tarea => 
         tarea.descripcion.toLowerCase().includes(busqueda) || 
-        tarea.parcela.toLowerCase().includes(busqueda)
+        tarea.parcela.toLowerCase().includes(busqueda) ||
+        tarea.prioridad.toLowerCase().includes(busqueda)
     );
 
     if (tareasFiltradas.length === 0) {
@@ -135,12 +148,11 @@ function EncontrarTarea(){
         return;
     }
     
-    // Función de renderizado para reutilizar la lógica de TodasLasTareas
     tareasFiltradas.forEach((element) => {
-        // Reutilizar la lógica de creación de la tarjeta
         var li = document.createElement("li");
         li.classList.add("task-item");
-        li.setAttribute('data-estado', element.estado); 
+        li.setAttribute('data-estado', element.estado);
+        li.setAttribute('data-prioridad', element.prioridad); 
 
         var header = document.createElement("div");
         header.classList.add("task-header");
@@ -166,6 +178,8 @@ function EncontrarTarea(){
             return div;
         };
 
+        // PASO CLAVE: Se incluye la prioridad en los detalles
+        details.appendChild(createDetailItem("Prioridad", element.prioridad.toUpperCase()));
         details.appendChild(createDetailItem("Parcela", element.parcela));
         details.appendChild(createDetailItem("Estado", element.estado.toUpperCase()));
         details.appendChild(createDetailItem("Herramientas", element.herramientas.join(", ")));
@@ -178,5 +192,4 @@ function EncontrarTarea(){
     });
 }
 
-// Inicializa la visualización de todas las tareas al cargar la página
 TodasLasTareas();

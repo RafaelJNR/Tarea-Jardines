@@ -1,36 +1,49 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Calendario de Tareas</title>
-        <meta name="description" content="Calendario minimalista para la gestión de tareas.">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="styles/styles.css">
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    </head>
-    <body>
-       <header class="header-container">
-            <h1>CALENDARIO DE TAREAS</h1> 
-            <div class="search-box">
-                <input type="text" id="tarea-input" placeholder="Buscar tarea..." aria-label="Buscar tarea"> 
-                
-                <button onclick="TodasLasTareas()" title="Mostrar todas las tareas">
-                    <i class="fas fa-list-ul"></i> 
-                </button>
-                
-                <button onclick="EncontrarTarea()" title="Buscar">
-                    <i class="fas fa-search"></i> 
-                </button>
-            </div>
-       </header>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Calendario de Tareas</title>
+    <meta
+      name="description"
+      content="Calendario minimalista para la gestión de tareas."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header class="header-container">
+      <h1>CALENDARIO DE TAREAS</h1>
+      <div class="search-box">
+        <input
+          type="text"
+          id="tarea-input"
+          placeholder="Buscar tarea..."
+          aria-label="Buscar tarea"
+        />
 
-       <section class="tasks-container">
-            <ul class="content" id="content">
-                </ul>
-       </section>
-        
-        <script src="scripts/index.js" async defer></script>
-    </body>
+        <button onclick="EncontrarTarea()" title="Buscar">
+          <i class="fas fa-search"></i>
+        </button>
+
+        <button onclick="TodasLasTareas()" title="Mostrar todas las tareas">
+          <i class="fas fa-list-ul"></i>
+        </button>
+      </div>
+    </header>
+
+    <section class="tasks-container">
+      <ul class="content" id="content"></ul>
+    </section>
+
+    <script src="scripts/index.js" async defer></script>
+  </body>
 </html>
