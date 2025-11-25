@@ -1,0 +1,220 @@
+
+:root {
+    --primary-color: #3f51b5; 
+    --secondary-color: #f5f5f5; 
+    --text-color: #333;
+    --card-bg: #ffffff;
+    --border-radius: 8px;
+    --shadow-light: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    padding: 20px;
+}
+
+.header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 3px solid var(--primary-color);
+    margin-bottom: 30px;
+}
+
+h1 {
+    margin-left: 15%;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.search-box {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.search-box input {
+    flex-grow: 1;
+    padding: 10px 15px;
+    border: 2px solid #ccc;
+    border-radius: var(--border-radius);
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.search-box input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+
+.search-box button {
+    
+    width: 45px; 
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0; 
+    font-size: 18px; 
+
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: 400;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.search-box button:hover {
+    background-color: #303f9f;
+}
+
+.search-box button:active {
+    transform: scale(0.98);
+}
+
+.tasks-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.content {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: 20px;
+}
+
+.task-item {
+    background-color: var(--card-bg);
+    padding: 15px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    border-left: 5px solid var(--primary-color);
+    overflow: hidden; 
+    height: 70px; 
+}
+
+.task-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1.1em;
+}
+
+.task-description {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex-grow: 1;
+    margin-right: 15px;
+}
+
+.task-date {
+    font-weight: 300;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.task-details {
+    display: none; 
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 10px;
+    font-size: 0.9em;
+}
+
+.detail-item strong {
+    color: var(--primary-color);
+    display: block;
+    margin-bottom: 3px;
+    font-weight: 400;
+}
+
+.task-item:hover {
+    transform: scale(1.05); 
+    z-index: 10;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    border-left-color: #e91e63; 
+    height: auto; 
+}
+
+.task-item:hover .task-description {
+    white-space: normal; 
+    overflow: visible;
+    text-overflow: clip;
+}
+
+.task-item:hover .task-details {
+    display: grid; 
+}
+
+.task-item[data-estado="finalizada"] {
+    opacity: 0.7;
+    border-left-color: #4CAF50; 
+}
+.task-item[data-estado="finalizada"] .task-date {
+    text-decoration: line-through;
+}
+
+
+/* ------------------------------------------------------------------- */
+/* MEDIA QUERIES - Diseño Responsivo */
+/* ------------------------------------------------------------------- */
+
+/* Tablet (ancho >= 768px) */
+@media (min-width: 768px) {
+    .header-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .search-box {
+        width: 350px;
+    }
+
+    .content {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+/* Escritorio (ancho >= 1024px) */
+@media (min-width: 1024px) {
+    .content {
+        grid-template-columns: repeat(3, 1fr); 
+    }
+}
+
+.search-box button {
+    width: 45px; 
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0; 
+    font-size: 18px; 
+
+    background-color: var(--primary-color);
+
+}
