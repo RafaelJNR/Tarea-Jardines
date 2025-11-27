@@ -32,7 +32,7 @@ body {
 }
 
 h1 {
-    margin-left: 15%;
+    margin-left: 2%;
     font-weight: 700;
     color: var(--primary-color);
     margin-bottom: 15px;
@@ -188,7 +188,7 @@ h1 {
 }
 
 .task-item[data-estado="pendiente"] {
-    border-left-color: #0e02f4; 
+    border-left-color: #3d7316; 
 }
 
 /* ------------------------------------------------------------------- */

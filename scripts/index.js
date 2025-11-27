@@ -72,6 +72,43 @@ const tareas =  [
       fechaBaja: "25/11",
       prioridad: "alta"
     },
+    { 
+      descripcion: "Instalar comedero y bebedero de pájaros",
+      parcela: "Talud",
+      estado: "pendiente",
+      herramientas: ["martillo, alcayatas, pala"],
+      fechaAlta: "27/11",
+      fechaBaja: "N/A",
+      prioridad: "baja"
+    },
+    { 
+      descripcion: "Limpiar canaleta de agua",
+      parcela: "Talud",
+      estado: "pendiente",
+      herramientas: ["fucha, rastrillo de abanico, sacho"],
+      fechaAlta: "27/11",
+      fechaBaja: "N/A",
+      prioridad: "alta"
+    },
+    { 
+      descripcion: "Tratamiento trychoderma a los dragos",
+      parcela: "Talud",
+      estado: "pendiente",
+      herramientas: ["mochila pulverizadora"],
+      fechaAlta: "27/11",
+      fechaBaja: "N/A",
+      prioridad: "media"
+    },
+    { 
+      descripcion: "Tratamiento trychoderma a los dragos",
+      parcela: "Talud",
+      estado: "pendiente",
+      herramientas: ["mochila pulverizadora"],
+      fechaAlta: "27/11",
+      fechaBaja: "N/A",
+      prioridad: "media"
+    },
+
 ];
 
 function TodasLasTareas(){
