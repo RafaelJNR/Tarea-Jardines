@@ -203,7 +203,29 @@ h1 {
     }
 
     .search-box {
-        width: 350px;
+        /* Aumentamos el ancho para que quepan el input, el select y 3 botones */
+        width: 600px; 
+        max-width: none;
+    }
+
+    /* Aseguramos que el input de búsqueda crezca más */
+    .search-box input {
+        flex-grow: 2; /* Le damos más prioridad de crecimiento */
+    }
+
+    /* Aseguramos que el select no se comprima demasiado */
+    .search-box select {
+        width: 150px; /* Le damos un ancho fijo para el texto */
+    }
+
+    /* Ajuste para que los botones mantengan su forma cuadrada */
+    .search-box button {
+        width: 45px; 
+        height: 45px;
+        flex-shrink: 0; /* Evita que se encojan */
+        padding: 0; 
+        font-size: 18px; 
+        background-color: var(--primary-color);
     }
 
     .content {

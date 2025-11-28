@@ -108,8 +108,66 @@ const tareas =  [
       fechaBaja: "N/A",
       prioridad: "media"
     },
+    { 
+      descripcion: "Reposición de la magarza de la fagina.",
+      parcela: "Talud",
+      estado: "pendiente",
+      herramientas: ["sacho, compost, oritga, pala de mano"],
+      fechaAlta: "28/11",
+      fechaBaja: "N/A",
+      prioridad: "media"
+    },
+    { 
+      descripcion: "Poda buganvilla.",
+      parcela: "Talud",
+      estado: "pendiente",
+      herramientas: ["tijera de poda, pico de loco, tijera de mano"],
+      fechaAlta: "28/11",
+      fechaBaja: "N/A",
+      prioridad: "media"
+    },
+    { 
+      descripcion: "Podar gaura.",
+      parcela: "Talud",
+      estado: "pendiente",
+      herramientas: ["tijera de poda, pico de loco, tijera de mano"],
+      fechaAlta: "28/11",
+      fechaBaja: "N/A",
+      prioridad: "media"
+    },
+    { 
+      descripcion: "Cambiar cintillo del entutorado de la plumeria.",
+      parcela: "Talud",
+      estado: "finalizada",
+      herramientas: ["tijera de mano"],
+      fechaAlta: "28/11",
+      fechaBaja: "28/11",
+      prioridad: "alta"
+    },
+    { 
+      descripcion: "Desbrozar adventicias rspetando la camellera y suncho",
+      parcela: "Talud",
+      estado: "pendiente",
+      herramientas: ["tijera de mano"],
+      fechaAlta: "28/11",
+      fechaBaja: "N/A",
+      prioridad: "baja"
+    },
+    { 
+      descripcion: "Aporte y redistribución de picón",
+      parcela: "Talud",
+      estado: "pendiente",
+      herramientas: ["tijera de mano"],
+      fechaAlta: "28/11",
+      fechaBaja: "N/A",
+      prioridad: "media"
+    },
 
 ];
+
+
+const OPENWEATHER_API_KEY = '9ffe1ed55188da10907f99b95883b9f0';
+
 
 function TodasLasTareas(){
 
