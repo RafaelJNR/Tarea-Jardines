@@ -165,10 +165,6 @@ const tareas =  [
 
 ];
 
-
-const OPENWEATHER_API_KEY = '9ffe1ed55188da10907f99b95883b9f0';
-
-
 function TodasLasTareas(){
 
   var contenido = document.getElementById("content");
