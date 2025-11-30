@@ -1,5 +1,35 @@
-// Se han actualizado los datos de ejemplo para que puedas ver el efecto completo
-const tareas =  [
+const tareasGrupo1 =  [
+    { 
+      descripcion: "Tarea de prueba 1.",
+      parcela: "Talud",
+      estado: "pendiente",
+      herramientas: ["mangueras goteo integrado, sacabocados, tijeras de mano"],
+      fechaAlta: "25/11",
+      fechaBaja: "N/A",
+      prioridad: "alta"
+    },
+    { 
+      descripcion: "Tarea de prueba 2.",
+      parcela: "Talud",
+      estado: "pendiente",
+      herramientas: ["mangueras goteo integrado, sacabocados, tijeras de mano"],
+      fechaAlta: "25/11",
+      fechaBaja: "N/A",
+      prioridad: "baja"
+    },
+    { 
+      descripcion: "Tarea de prueba 3.",
+      parcela: "Talud",
+      estado: "pendiente",
+      herramientas: ["mangueras goteo integrado, sacabocados, tijeras de mano"],
+      fechaAlta: "25/11",
+      fechaBaja: "N/A",
+      prioridad: "baja"
+    },
+
+];
+
+const tareasGrupo2 =  [
     { 
       descripcion: "Ampliar aro riego palmera Bismarck.",
       parcela: "Talud",
@@ -55,15 +85,6 @@ const tareas =  [
       prioridad: "media"
     },
     { 
-      descripcion: "Desbrozar adventicias bordillo.",
-      parcela: "talud",
-      estado: "pendiente",
-      herramientas: ["fucha de mano"],
-      fechaAlta: "25/11",
-      fechaBaja: "N/A",
-      prioridad: "baja"
-    },
-    { 
       descripcion: "Sustitución manguera picada.",
       parcela: "talud",
       estado: "finalizada",
@@ -100,15 +121,6 @@ const tareas =  [
       prioridad: "media"
     },
     { 
-      descripcion: "Tratamiento trychoderma a los dragos",
-      parcela: "Talud",
-      estado: "pendiente",
-      herramientas: ["mochila pulverizadora"],
-      fechaAlta: "27/11",
-      fechaBaja: "N/A",
-      prioridad: "media"
-    },
-    { 
       descripcion: "Reposición de la magarza de la fagina.",
       parcela: "Talud",
       estado: "pendiente",
@@ -127,16 +139,7 @@ const tareas =  [
       prioridad: "media"
     },
     { 
-      descripcion: "Podar gaura.",
-      parcela: "Talud",
-      estado: "pendiente",
-      herramientas: ["tijera de poda, pico de loco, tijera de mano"],
-      fechaAlta: "28/11",
-      fechaBaja: "N/A",
-      prioridad: "media"
-    },
-    { 
-      descripcion: "Cambiar cintillo del entutorado de la plumeria.",
+      descripcion: "Cambiar cintillo del entutorado de la plumeria",
       parcela: "Talud",
       estado: "finalizada",
       herramientas: ["tijera de mano"],
@@ -145,7 +148,7 @@ const tareas =  [
       prioridad: "alta"
     },
     { 
-      descripcion: "Desbrozar adventicias rspetando la camellera y suncho",
+      descripcion: "Desbrozar adventicias respetando la camellera",
       parcela: "Talud",
       estado: "pendiente",
       herramientas: ["tijera de mano"],
@@ -157,6 +160,15 @@ const tareas =  [
       descripcion: "Aporte y redistribución de picón",
       parcela: "Talud",
       estado: "pendiente",
+      herramientas: ["pala, rastrillo"],
+      fechaAlta: "28/11",
+      fechaBaja: "N/A",
+      prioridad: "media"
+    },
+    { 
+      descripcion: "Podar limpieza gaura",
+      parcela: "Talud",
+      estado: "pendiente",
       herramientas: ["tijera de mano"],
       fechaAlta: "28/11",
       fechaBaja: "N/A",
@@ -165,81 +177,79 @@ const tareas =  [
 
 ];
 
-function TodasLasTareas(){
+const tareasGrupo3 =  [
+    { 
+      descripcion: "Conseguir un banco.",
+      parcela: "Nuevo",
+      estado: "pendiente",
+      herramientas: ["martillo, sierra"],
+      fechaAlta: "30/11",
+      fechaBaja: "N/A",
+      prioridad: "baja"
+    },
+    { 
+      descripcion: "Montar pérgola.",
+      parcela: "Nuevo",
+      estado: "pendiente",
+      herramientas: ["martillo, sierra"],
+      fechaAlta: "30/11",
+      fechaBaja: "N/A",
+      prioridad: "baja"
+    },
+    { 
+      descripcion: "Monstar bebedero de pájaros en rocalla.",
+      parcela: "Nuevo",
+      estado: "pendiente",
+      herramientas: ["martillo, sierra"],
+      fechaAlta: "30/11",
+      fechaBaja: "N/A",
+      prioridad: "baja"
+    },
+    { 
+      descripcion: "Colocar maceteros.",
+      parcela: "Nuevo",
+      estado: "pendiente",
+      herramientas: [""],
+      fechaAlta: "30/11",
+      fechaBaja: "N/A",
+      prioridad: "baja"
+    },
+    { 
+      descripcion: "Revisar reposiciones.",
+      parcela: "Nuevo",
+      estado: "pendiente",
+      herramientas: [""],
+      fechaAlta: "30/11",
+      fechaBaja: "N/A",
+      prioridad: "baja"
+    },
 
-  var contenido = document.getElementById("content");
-  contenido.innerHTML = "";
+];
 
-    tareas.forEach((element) => {
-        // Crea el elemento principal (la tarjeta de tarea)
-        var li = document.createElement("li");
-        li.classList.add("task-item");
-        li.setAttribute('data-estado', element.estado);
-        // AÑADIDO: Atributo para la prioridad (para los estilos de borde)
-        li.setAttribute('data-prioridad', element.prioridad); 
+// Estructura de datos unificada con la propiedad 'grupo'
+const gruposTareas = {
+    "grupo1": tareasGrupo1.map(t => ({...t, grupo: "grupo 1"})),
+    "grupo2": tareasGrupo2.map(t => ({...t, grupo: "grupo 2"})),
+    "grupo3": tareasGrupo3.map(t => ({...t, grupo: "grupo 3"})),
+};
 
-        // --- Encabezado de la tarjeta (siempre visible) ---
-        var header = document.createElement("div");
-        header.classList.add("task-header");
+// Array combinado para búsqueda global
+const todasLasTareas = [
+    ...gruposTareas.grupo1,
+    ...gruposTareas.grupo2,
+    ...gruposTareas.grupo3
+];
 
-        var description = document.createElement("span");
-        description.classList.add("task-description");
-        description.textContent = element.descripcion;
 
-        var date = document.createElement("span");
-        date.classList.add("task-date");
-        date.textContent = element.fechaAlta;
-        
-        header.appendChild(description);
-        header.appendChild(date);
+function renderizarListaTareas(tareas, container) {
+    container.innerHTML = ""; 
 
-        // --- Contenedor de detalles (visible en hover) ---
-        var details = document.createElement("div");
-        details.classList.add("task-details");
-
-        // Función auxiliar para crear un item de detalle
-        const createDetailItem = (label, value) => {
-            const div = document.createElement("div");
-            div.classList.add("detail-item");
-            div.innerHTML = `<strong>${label}:</strong> ${value}`;
-            return div;
-        };
-
-        // PASO CLAVE: Se incluye la prioridad en los detalles
-        details.appendChild(createDetailItem("Prioridad", element.prioridad.toUpperCase())); 
-        details.appendChild(createDetailItem("Parcela", element.parcela));
-        details.appendChild(createDetailItem("Estado", element.estado.toUpperCase()));
-        details.appendChild(createDetailItem("Herramientas", element.herramientas.join(", ")));
-        details.appendChild(createDetailItem("Fecha Baja", element.fechaBaja));
-
-        // Ensambla el <li>
-        li.appendChild(header);
-        li.appendChild(details);
-        
-        contenido.appendChild(li);
-      
-    });
-}
-
-// La función EncontrarTarea() también debe ser actualizada de forma similar
-
-function EncontrarTarea(){
-    const busqueda = document.getElementById("tarea-input").value.toLowerCase();
-    const contenido = document.getElementById("content");
-    contenido.innerHTML = ""; 
-
-    const tareasFiltradas = tareas.filter(tarea => 
-        tarea.descripcion.toLowerCase().includes(busqueda) || 
-        tarea.parcela.toLowerCase().includes(busqueda) ||
-        tarea.prioridad.toLowerCase().includes(busqueda)
-    );
-
-    if (tareasFiltradas.length === 0) {
-        contenido.innerHTML = "<p style='text-align: center; margin-top: 20px;'>❌ No se encontraron tareas con ese criterio.</p>";
+    if (tareas.length === 0) {
+        container.innerHTML = "<p style='text-align: center; margin-top: 20px; width: 100%;'>❌ No se encontró la tarea especificada.</p>";
         return;
     }
-    
-    tareasFiltradas.forEach((element) => {
+
+    tareas.forEach((element) => {
         var li = document.createElement("li");
         li.classList.add("task-item");
         li.setAttribute('data-estado', element.estado);
@@ -269,18 +279,99 @@ function EncontrarTarea(){
             return div;
         };
 
-        // PASO CLAVE: Se incluye la prioridad en los detalles
         details.appendChild(createDetailItem("Prioridad", element.prioridad.toUpperCase()));
         details.appendChild(createDetailItem("Parcela", element.parcela));
         details.appendChild(createDetailItem("Estado", element.estado.toUpperCase()));
         details.appendChild(createDetailItem("Herramientas", element.herramientas.join(", ")));
         details.appendChild(createDetailItem("Fecha Baja", element.fechaBaja));
+        details.appendChild(createDetailItem("Grupo", (element.grupo || 'N/A').toUpperCase())); 
 
         li.appendChild(header);
         li.appendChild(details);
         
-        contenido.appendChild(li);
+        container.appendChild(li);
     });
 }
 
-TodasLasTareas();
+function MostrarGrupos() {
+    const grupoSeleccionado = document.getElementById("grupo-select").value;
+    const tareasContainer = document.getElementById("grupos-container");
+    tareasContainer.innerHTML = "";
+
+    document.getElementById("tarea-input").value = "";
+
+    if (grupoSeleccionado === "todos") {
+        Object.keys(gruposTareas).forEach(grupoKey => {
+            const tareasDelGrupo = gruposTareas[grupoKey];
+            const grupoDisplay = "Grupo " + grupoKey.replace('grupo', '');
+
+            const titulo = document.createElement("h2");
+            titulo.classList.add("group-title");
+            titulo.textContent = `${grupoDisplay} (${tareasDelGrupo.length} tareas)`;
+            tareasContainer.appendChild(titulo);
+
+            const ul = document.createElement("ul");
+            ul.classList.add("content"); 
+            tareasContainer.appendChild(ul);
+            
+            renderizarListaTareas(tareasDelGrupo, ul);
+        });
+    } else {
+
+        const tareasDelGrupo = gruposTareas[grupoSeleccionado];
+        const grupoDisplay = "Grupo " + grupoSeleccionado.replace('grupo', '');
+
+        const titulo = document.createElement("h2");
+        titulo.classList.add("group-title");
+        titulo.textContent = `${grupoDisplay} (${tareasDelGrupo.length} tareas)`;
+        tareasContainer.appendChild(titulo);
+
+        const ul = document.createElement("ul");
+        ul.classList.add("content");
+        tareasContainer.appendChild(ul);
+        
+        renderizarListaTareas(tareasDelGrupo, ul);
+    }
+}
+
+
+function EncontrarTarea(){
+    const busqueda = document.getElementById("tarea-input").value.toLowerCase().trim();
+    const grupoSeleccionado = document.getElementById("grupo-select").value;
+    const tareasContainer = document.getElementById("grupos-container");
+    tareasContainer.innerHTML = ""; 
+
+    if (busqueda === "") {
+        MostrarGrupos();
+        return;
+    }
+
+    let tareasAFiltro = [];
+    let grupoKeyLabel = "Todos los Grupos";
+
+    if (grupoSeleccionado === "todos") {
+        tareasAFiltro = todasLasTareas;
+    } else {
+        tareasAFiltro = gruposTareas[grupoSeleccionado] || [];
+        grupoKeyLabel = "Grupo " + grupoSeleccionado.replace('grupo', '');
+    }
+
+    const tareasFiltradas = tareasAFiltro.filter(tarea => 
+        tarea.descripcion.toLowerCase().includes(busqueda) || 
+        tarea.parcela.toLowerCase().includes(busqueda) ||
+        tarea.prioridad.toLowerCase().includes(busqueda)
+    );
+
+    const titulo = document.createElement("h2");
+    titulo.classList.add("group-title", "search-results-title");
+    titulo.textContent = `Resultados de Búsqueda en ${grupoKeyLabel} (${tareasFiltradas.length} tareas)`;
+    tareasContainer.appendChild(titulo);
+
+    const ul = document.createElement("ul");
+    ul.classList.add("content");
+    tareasContainer.appendChild(ul);
+
+    renderizarListaTareas(tareasFiltradas, ul);
+}
+
+MostrarGrupos();

@@ -9,43 +9,40 @@
       content="Calendario minimalista para la gestión de tareas."
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/styles.css" /> 
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
       rel="stylesheet"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
+
   </head>
   <body>
     <header class="header-container">
       <h1>CALENDARIO DE TAREAS</h1>
       <div class="search-box">
+        <select id="grupo-select" onchange="MostrarGrupos();" aria-label="Seleccionar grupo de tareas">
+            <option value="todos">Todos</option>
+            <option value="grupo1">Grupo 1</option>
+            <option value="grupo2">Grupo 2</option>
+            <option value="grupo3">Grupo 3</option>
+        </select>
 
         <input
           type="search"
           id="tarea-input"
-          placeholder="&#128269; Buscar tarea..."
+          placeholder="&#128269; descripción, parcela, prioridad..."
           aria-label="Buscar tarea"
+          oninput="EncontrarTarea()"
         />
 
-        <button onclick="EncontrarTarea()" title="Buscar">
-          <i class="fas fa-search"></i>
-        </button>
-
-        <button onclick="TodasLasTareas()" title="Mostrar todas las tareas">
-          <i class="fas fa-list-ul"></i>
-        </button>
-
-      </div>
+        <button onclick="MostrarGrupos()" title="Mostrar todos los grupos">
+          &#9776; </button>
+        
+        </div>
     </header>
 
-    <div id="weather-forecast" class="weather-forecast-container"></div>
-
     <section class="tasks-container">
-      <ul class="content" id="content"></ul>
+      <div class="grupos-container" id="grupos-container"></div>
     </section>
 
     <script src="scripts/index.js" async defer></script>
