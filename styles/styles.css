@@ -51,12 +51,12 @@ h1 {
     padding: 10px 5px;
     border: 2px solid #ccc;
     border-radius: var(--border-radius);
-    font-size: 14px;
+    font-size: 13px;
     flex-shrink: 0; 
     transition: border-color 0.3s;
     background-color: var(--card-bg);
     color: var(--text-color);
-    min-width: 100px; 
+    min-width: 80px; 
 }
 
 .search-box select:focus {
