@@ -121,7 +121,7 @@ const tareasGrupo2 =  [
       prioridad: "media"
     },
     { 
-      descripcion: "Reposición de la magarza de la fagina.",
+      descripcion: "Reposición de la magarza de la fajina.",
       parcela: "Talud",
       estado: "pendiente",
       herramientas: ["sacho, compost, oritga, pala de mano"],
@@ -166,7 +166,7 @@ const tareasGrupo2 =  [
       prioridad: "media"
     },
     { 
-      descripcion: "Podar limpieza gaura",
+      descripcion: "Poda limpieza gaura",
       parcela: "Talud",
       estado: "pendiente",
       herramientas: ["tijera de mano"],
@@ -197,7 +197,7 @@ const tareasGrupo3 =  [
       prioridad: "baja"
     },
     { 
-      descripcion: "Monstar bebedero de pájaros en rocalla.",
+      descripcion: "Montar bebedero de pájaros en rocalla.",
       parcela: "Nuevo",
       estado: "pendiente",
       herramientas: ["martillo, sierra"],
@@ -226,14 +226,12 @@ const tareasGrupo3 =  [
 
 ];
 
-// Estructura de datos unificada con la propiedad 'grupo'
 const gruposTareas = {
     "grupo1": tareasGrupo1.map(t => ({...t, grupo: "grupo 1"})),
     "grupo2": tareasGrupo2.map(t => ({...t, grupo: "grupo 2"})),
     "grupo3": tareasGrupo3.map(t => ({...t, grupo: "grupo 3"})),
 };
 
-// Array combinado para búsqueda global
 const todasLasTareas = [
     ...gruposTareas.grupo1,
     ...gruposTareas.grupo2,

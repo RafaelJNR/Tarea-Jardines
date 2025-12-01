@@ -20,6 +20,7 @@
     <header class="header-container">
       <h1>CALENDARIO DE TAREAS</h1>
       <div class="search-box">
+        
         <select id="grupo-select" onchange="MostrarGrupos();" aria-label="Seleccionar grupo de tareas">
             <option value="todos">Todos</option>
             <option value="grupo1">Grupo 1</option>
@@ -27,14 +28,18 @@
             <option value="grupo3">Grupo 3</option>
         </select>
 
-        <input
-          type="search"
-          id="tarea-input"
-          placeholder="&#128269; descripción, parcela, prioridad..."
-          aria-label="Buscar tarea"
-          oninput="EncontrarTarea()"
-        />
-
+        <div class="search-input-row">
+            <input
+              type="search"
+              id="tarea-input"
+              placeholder="&#128269; descripción, parcela, prioridad..."
+              aria-label="Buscar tarea"
+              oninput="EncontrarTarea()"
+            />
+            
+        </div>
+        
+      </div>
     </header>
 
     <section class="tasks-container">
