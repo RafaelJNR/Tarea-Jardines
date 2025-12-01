@@ -33,23 +33,23 @@ const tareasGrupo2 =  [
     { 
       descripcion: "Ampliar aro riego palmera Bismarck.",
       parcela: "Talud",
-      estado: "pendiente",
+      estado: "finalizada",
       herramientas: ["mangueras goteo integrado, sacabocados, tijeras de mano"],
       fechaAlta: "25/11",
-      fechaBaja: "N/A",
+      fechaBaja: "28/11",
       prioridad: "alta"
     },
     { 
       descripcion: "Reposición tres (3) tajinastes.",
       parcela: "C.G.",
-      estado: "pendiente",
+      estado: "finalizada",
       herramientas: ["sacho", "compost", "ortiga"],
       fechaAlta: "25/11",
-      fechaBaja: "N/A",
+      fechaBaja: "01/12",
       prioridad: "media"
     },
     { 
-      descripcion: "Adornar y plantar fajina.",
+      descripcion: "Plantar fajina.",
       parcela: "Talud",
       estado: "pendiente",
       herramientas: ["sacho, martillo, fucha, pala de jardinería"],
@@ -96,10 +96,10 @@ const tareasGrupo2 =  [
     { 
       descripcion: "Instalar comedero y bebedero de pájaros",
       parcela: "Talud",
-      estado: "pendiente",
+      estado: "finalizada",
       herramientas: ["martillo, alcayatas, pala"],
       fechaAlta: "27/11",
-      fechaBaja: "N/A",
+      fechaBaja: "01/12",
       prioridad: "baja"
     },
     { 
@@ -172,6 +172,24 @@ const tareasGrupo2 =  [
       herramientas: ["tijera de mano"],
       fechaAlta: "28/11",
       fechaBaja: "N/A",
+      prioridad: "media"
+    },
+    { 
+      descripcion: "Ampliar alcorques de los ficus",
+      parcela: "Explanada",
+      estado: "finalizada",
+      herramientas: ["sacho, rastrillo"],
+      fechaAlta: "28/11",
+      fechaBaja: "01/12",
+      prioridad: "media"
+    },
+     { 
+      descripcion: "Poda de los ficus",
+      parcela: "Explanada",
+      estado: "finalizada",
+      herramientas: ["tijera de mano, pico de loro, tijeras de podar"],
+      fechaAlta: "28/11",
+      fechaBaja: "01/12",
       prioridad: "media"
     },
 
