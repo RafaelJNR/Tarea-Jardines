@@ -121,7 +121,7 @@ const tareasGrupo2 =  [
       prioridad: "media"
     },
     { 
-      descripcion: "Reposición de la magarza de la fajina.",
+      descripcion: "Traslado de las cactasias.",
       parcela: "Talud",
       estado: "pendiente",
       herramientas: ["sacho, compost, oritga, pala de mano"],
@@ -151,7 +151,7 @@ const tareasGrupo2 =  [
       descripcion: "Desbrozar adventicias respetando la camellera",
       parcela: "Talud",
       estado: "pendiente",
-      herramientas: ["tijera de mano"],
+      herramientas: ["fucha, sacho, rastrillo de puas"],
       fechaAlta: "28/11",
       fechaBaja: "N/A",
       prioridad: "baja"
@@ -183,13 +183,31 @@ const tareasGrupo2 =  [
       fechaBaja: "01/12",
       prioridad: "media"
     },
-     { 
+    { 
       descripcion: "Poda de los ficus",
       parcela: "Explanada",
       estado: "finalizada",
       herramientas: ["tijera de mano, pico de loro, tijeras de podar"],
       fechaAlta: "28/11",
       fechaBaja: "01/12",
+      prioridad: "media"
+    },
+    { 
+      descripcion: "Abono de los ficus",
+      parcela: "Explanada",
+      estado: "pendiente",
+      herramientas: ["sacho, compost"],
+      fechaAlta: "28/11",
+      fechaBaja: "N/A",
+      prioridad: "media"
+    },
+    { 
+      descripcion: "Instalar riego de los ficus",
+      parcela: "Explanada",
+      estado: "pendiente",
+      herramientas: ["mangueras goteo integrado, sacabocados, tijeras de mano"],
+      fechaAlta: "28/11",
+      fechaBaja: "N/A",
       prioridad: "media"
     },
 
