@@ -8,25 +8,6 @@ const tareasGrupo1 =  [
       fechaBaja: "N/A",
       prioridad: "alta"
     },
-    { 
-      descripcion: "Tarea de prueba 2.",
-      parcela: "Talud",
-      estado: "pendiente",
-      herramientas: ["mangueras goteo integrado, sacabocados, tijeras de mano"],
-      fechaAlta: "25/11",
-      fechaBaja: "N/A",
-      prioridad: "baja"
-    },
-    { 
-      descripcion: "Tarea de prueba 3.",
-      parcela: "Talud",
-      estado: "pendiente",
-      herramientas: ["mangueras goteo integrado, sacabocados, tijeras de mano"],
-      fechaAlta: "25/11",
-      fechaBaja: "N/A",
-      prioridad: "baja"
-    },
-
 ];
 
 const tareasGrupo2 =  [
@@ -51,19 +32,19 @@ const tareasGrupo2 =  [
     { 
       descripcion: "Plantar fajina.",
       parcela: "Talud",
-      estado: "pendiente",
+      estado: "finalizada",
       herramientas: ["sacho, martillo, fucha, pala de jardinería"],
       fechaAlta: "25/11",
-      fechaBaja: "N/A",
+      fechaBaja: "03/12",
       prioridad: "baja"
     },
     { 
       descripcion: "Instalar riego en la fajina.",
       parcela: "Talud",
-      estado: "pendiente",
+      estado: "finalizada",
       herramientas: ["mangueras goteo integrado, sacabocados, tijeras de mano"],
       fechaAlta: "25/11",
-      fechaBaja: "N/A",
+      fechaBaja: "03/12",
       prioridad: "baja"
     },
     { 
@@ -123,10 +104,10 @@ const tareasGrupo2 =  [
     { 
       descripcion: "Traslado de las cactasias.",
       parcela: "Talud",
-      estado: "pendiente",
+      estado: "finalizada",
       herramientas: ["sacho, compost, oritga, pala de mano"],
       fechaAlta: "28/11",
-      fechaBaja: "N/A",
+      fechaBaja: "03/12",
       prioridad: "media"
     },
     { 
